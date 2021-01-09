@@ -24,12 +24,14 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import SmsAndroid from 'react-native-get-sms-android';
-import { API_URL } from "@env"
+import { API_URI, FROM, TO } from "@env"
 
 
 
 const App: () => React$Node = () => {
-  console.log(API_URL);
+  console.log(API_URI);
+  console.log(FROM);
+  console.log(TO);
   // var filter = {
   //   box: 'inbox', // 'inbox' (default), 'sent', 'draft', 'outbox', 'failed', 'queued', and '' for all
 
