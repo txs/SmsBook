@@ -64,6 +64,14 @@ graph TD
 <!-- </Flowchart> -->
 </table>
 
+# Check real device on Android
+
+```Bash
+adb devices
+```
+
+The "List of devices attached" should have "device" in the list
+
 
 # Todo
 
