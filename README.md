@@ -64,8 +64,10 @@ graph TD
 <!-- </Flowchart> -->
 </table>
 
+
 # Check real device on Android
 
+## How to check android with physical devices?
 ```Bash
 adb devices
 ```
