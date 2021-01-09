@@ -27,7 +27,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import SmsAndroid from 'react-native-get-sms-android';
-import { API_URI, FROM, TO } from "@env"
+import { API_URI, FROM, TO, TO_ME } from "@env"
 import sendSMSViaTwilio from './sendSMSViaTwilio'
 import sendSMSViaDevice from './sendSMSViaDevice'
 
@@ -114,7 +114,7 @@ const App: () => React$Node = () => {
               <Button
                 title="Press me to send by Twilio"
                 // onPress={() => Alert.alert('Simple Button pressed')}
-                onPress={() => sendSMSViaTwilio('Hi, this is Andy!', TO)}
+                onPress={() => sendSMSViaTwilio('Hi, this is Andy! twilio yeah!', TO_ME)}
               />
               <Text style={styles.sectionTitle}>Step One</Text>
               <Button

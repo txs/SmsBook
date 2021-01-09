@@ -79,6 +79,7 @@ The "List of devices attached" should have "device" in the list
 
 - [x] Read SMS @Done by @txs 2021-01-08 15:14:20
 - [x] Send SMS @Done by @txs 2021-01-09 19:14:08
-- [ ] Twilio SMS Send
+- [x] Twilio SMS Send @Done by @txs 2021-01-09 23:01:23
 - [ ] Read incoming message by clock
 - [ ] Unix time to readable time
+- [ ] 
