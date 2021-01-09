@@ -4,6 +4,6 @@ Easy social network like facebook without Internet
 
 # Todo
 
-- [ ] Read SMS
+- [x] Read SMS
 - [ ] Send SMS
 - [ ] Twilio SMS Send
