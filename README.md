@@ -78,5 +78,6 @@ The "List of devices attached" should have "device" in the list
 # Todo
 
 - [x] Read SMS
-- [ ] Send SMS
+- [x] Send SMS
 - [ ] Twilio SMS Send
+- [ ] Read incoming message by clock

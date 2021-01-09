@@ -14,6 +14,9 @@ import {
   View,
   Text,
   StatusBar,
+  Button,
+  Alert,
+  DeviceEventEmitter,
 } from 'react-native';
 
 import {
@@ -25,13 +28,19 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import SmsAndroid from 'react-native-get-sms-android';
 import { API_URI, FROM, TO } from "@env"
-
+import sendSMSViaTwilio from './sendSMSViaTwilio'
+import sendSMSViaDevice from './sendSMSViaDevice'
 
 
 const App: () => React$Node = () => {
-  console.log(API_URI);
-  console.log(FROM);
-  console.log(TO);
+  // console.log(API_URI);
+  // console.log(FROM);
+  // console.log(TO);
+  console.log('App Refreshed');
+  // An event will be thrown when the sms has been delivered. If the sms was delivered successfully the message will be "SMS delivered" otherwise the message will be "SMS not delivered"
+  DeviceEventEmitter.addListener('sms_onDelivery', (msg) => {
+    console.log(msg);
+  });
   // var filter = {
   //   box: 'inbox', // 'inbox' (default), 'sent', 'draft', 'outbox', 'failed', 'queued', and '' for all
 
@@ -98,6 +107,17 @@ const App: () => React$Node = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
+              <Button
+                title="Press me to send by Twilio"
+                // onPress={() => Alert.alert('Simple Button pressed')}
+                onPress={() => sendSMSViaTwilio('%PCSFinalGroupA:Hi, this is Andy!', TO)}
+              />
+              <Text style={styles.sectionTitle}>Step One</Text>
+              <Button
+                title="Press me to send by Device SMS"
+                // onPress={() => Alert.alert('Simple Button pressed')}
+                onPress={() => sendSMSViaDevice('Device SMS Test! Hi, This is Andy', TO)}
+              />
               <Text style={styles.sectionTitle}>Step One</Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
