@@ -7,15 +7,32 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "node_modules/.bin/rn-nodeify --install crypto,fs,http,https,stream,events,path --hack"
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "base-64": "^1.0.0",
+    "crypto": "^1.0.1",
+    "events": "^1.1.1",
+    "fs": "^0.0.1-security",
+    "https-browserify": "^0.0.1",
+    "path-browserify": "^0.0.0",
     "qs": "^6.9.4",
     "react": "16.13.1",
     "react-native": "0.63.4",
+    "react-native-crypto": "^2.2.0",
     "react-native-dotenv": "^2.5.0",
-    "react-native-get-sms-android": "^2.1.0"
+    "react-native-get-sms-android": "^2.1.0",
+    "react-native-http": "github:tradle/react-native-http#834492d",
+    "react-native-level-fs": "^2.0.1",
+    "react-native-randombytes": "^2.3.0",
+    "readable-stream": "^1.0.33",
+    "rn-nodeify": "^6.0.1",
+    "stream-browserify": "^1.0.0",
+    "twilio": "^3.54.2",
+    "url": "^0.11.0",
+    "util": "^0.12.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -29,5 +46,31 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "react-native": {
+    "crypto": "react-native-crypto",
+    "fs": "react-native-level-fs",
+    "http": "react-native-http",
+    "https": "https-browserify",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify",
+    "path": "path-browserify"
+  },
+  "browser": {
+    "crypto": "react-native-crypto",
+    "fs": "react-native-level-fs",
+    "http": "react-native-http",
+    "https": "https-browserify",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify",
+    "path": "path-browserify"
   }
 }
