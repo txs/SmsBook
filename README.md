@@ -82,4 +82,4 @@ The "List of devices attached" should have "device" in the list
 - [x] Twilio SMS Send @Done by @txs 2021-01-09 23:01:23
 - [ ] Read incoming message by clock
 - [ ] Unix time to readable time
-- [ ] 
+- [x] Able to send test message for id, phone number server and message @Done by @txs 2021-01-10 16:19:05

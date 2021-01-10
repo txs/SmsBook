@@ -17,8 +17,11 @@ import {
   Button,
   Alert,
   DeviceEventEmitter,
+  Dimensions,
 } from 'react-native';
 
+// import {
+//   Header,
 import {
   Header,
   LearnMoreLinks,
@@ -26,17 +29,44 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import moment from 'moment'
 import SmsAndroid from 'react-native-get-sms-android';
 import { API_URI, FROM, TO, TO_ME } from "@env"
 import sendSMSViaTwilio from './sendSMSViaTwilio'
 import sendSMSViaDevice from './sendSMSViaDevice'
+import SmsServer from './smsServer'
+// import { Container, Header, Content, Footer, FooterTab, Icon, Badge, Text, Button } from 'native-base';
+import Footer from './components/Footer'
+import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import ChatPage from './components/ChatPage'
+import UserPage from './components/UserPage'
+import ServerPage from './components/ServerPage'
+
 
 
 const App: () => React$Node = () => {
   // console.log(API_URI);
   // console.log(FROM);
   // console.log(TO);
+  // const [isEnabled, setIsEnabled] = useState(false);
   console.log('App Refreshed');
+
+  const FirstRoute = () => (
+    <View style={[styles.scene, { backgroundColor: '#ff4081' }]} >
+      <Text>chat</Text>
+    </View>
+  );
+
+  const UserRoute = () => (
+    <View style={[styles.scene, { backgroundColor: '#673ab7' }]} >
+      <Text>user</Text>
+    </View>
+  );
+
+  const initialLayout = { width: Dimensions.get('window').width };
+
+  let users = []
   // An event will be thrown when the sms has been delivered. If the sms was delivered successfully the message will be "SMS delivered" otherwise the message will be "SMS not delivered"
   DeviceEventEmitter.addListener('sms_onDelivery', (msg) => {
     console.log(msg);
@@ -61,7 +91,7 @@ const App: () => React$Node = () => {
   //   // _id: 1234, // specify the msg id
   //   // thread_id: 12, // specify the conversation thread_id
   //   // address: '+1888------', // sender's phone number
-  //   // body: 'How are you', // content to match
+  //   // body: '蝦皮', // content to match
   //   /** the next 2 filters can be used for pagination **/
   //   indexFrom: 0, // start from index 0
   //   maxCount: 10, // count of SMS to return each time
@@ -74,84 +104,148 @@ const App: () => React$Node = () => {
   //   },
   //   (count, smsList) => {
   //     console.log('Count: ', count);
-  //     console.log('List: ', smsList);
+  //     // console.log('List: ', smsList);
   //     var arr = JSON.parse(smsList);
 
   //     arr.forEach(function (object) {
-  //       if (object.date == "1582529567735") {
-  //         console.log('Object: ' + object);
-  //         console.log('-->' + object.date);
-  //         console.log('-->' + object.body);
-  //         console.log('-->keys:' + Object.keys(object));
-  //         console.log('--------------------------');
-  //         // log out what's inside the message
-  //         Object.keys(object).map(function (key) {
-  //           console.log('--> ' + key + ' : ' + object[key]);
-  //         });
+  //       // if (object.date == "1582529567735") {
+  //       // console.log('Object: ' + object);
+  //       // console.log('-->' + object.date);
+  //       console.log('-->' + object.body);
+  //       if (object.body.includes('ch@')) {
+  //         console.log('yo!');
+  //         const chatMessage = object.body.split('ch@')[1]
+  //         console.log(chatMessage);
   //       }
+  //       // console.log('-->keys:' + Object.keys(object));
+  //       console.log('--------------------------');
+
+  //       // const dateTime = moment(object.date).format('MMMM Do YYYY, h:mm:ss a')
+  //       // console.log(dateTime);
+  //       // log out what's inside the message
+  //       // Object.keys(object).map(function (key) {
+  //       //   console.log('--> ' + key + ' : ' + object[key]);
+  //       // });
+  //       // }
   //     });
   //   },
   // );
+
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    { key: 'chat', title: 'Chat' },
+    { key: 'user', title: 'User' },
+    { key: 'server', title: 'Server' },
+  ]);
+
+  const renderScene = SceneMap({
+    chat: ChatPage,
+    user: UserPage,
+    server: ServerPage,
+  });
+
+  const getTabBarIcon = (props) => {
+    const { route } = props
+    if (route.key === 'chat') {
+      return <Icon name='comments' size={18} color={'white'} />
+
+    }
+    if (route.key == 'user') {
+      return <Icon name='user-circle' size={18} color={'white'} />
+    }
+    if (route.key == 'server') {
+      return <Icon name='server' size={18} color={'white'} />
+    }
+  }
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Button
-                title="Alert Yo!"
-                onPress={() => Alert.alert('Yo!')}
-              />
-              <Button
-                title="Press me to send by Twilio"
-                // onPress={() => Alert.alert('Simple Button pressed')}
-                onPress={() => sendSMSViaTwilio('Hi, this is Andy! twilio yeah!', TO_ME)}
-              />
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Button
-                title="Press me to send by Device SMS"
-                // onPress={() => Alert.alert('Simple Button pressed')}
-                onPress={() => sendSMSViaDevice('Device SMS Test! Hi, This is Andy', TO)}
-              />
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
+      <SafeAreaView style={{ flex: 1 }}>
+        <TabView
+          tabBarPosition='bottom'
+          navigationState={{ index, routes }}
+          renderScene={renderScene}
+          onIndexChange={setIndex}
+          renderTabBar={props =>
+            <TabBar
+              {...props}
+              indicatorStyle={{ backgroundColor: 'red' }}
+              renderIcon={
+                props => getTabBarIcon(props)
+              }
+              tabStyle={styles.bubble}
+            />
+          }
+          initialLayout={initialLayout}
+        />
       </SafeAreaView>
     </>
-  );
+  )
+
+  // return (
+  //   <>
+  //     <StatusBar barStyle="dark-content" />
+  //     <SafeAreaView style={{ flex: 1 }}>
+  //       <ScrollView
+  //         contentInsetAdjustmentBehavior="automatic"
+  //         style={styles.scrollView}>
+  //         <Header />
+  //         {global.HermesInternal == null ? null : (
+  //           <View style={styles.engine}>
+  //             <Text style={styles.footer}>Engine: Hermes</Text>
+  //           </View>
+  //         )}
+  //         <View style={styles.body}>
+  //           <View style={styles.sectionContainer}>
+  //             {/* <Button
+  //               title="Alert Yo!"
+  //               onPress={() => Alert.alert('Yo!')}
+  //             /> */}
+  //             <SmsServer />
+  //             <Button
+  //               title="Press me to send by Twilio"
+  //               // onPress={() => Alert.alert('Simple Button pressed')}
+  //               onPress={() => sendSMSViaTwilio('ch@txs: Hi, txs! what\'s up!', TO_ME)}
+  //             />
+  //             {/* for spacing */}
+  //             <Text style={styles.sectionTitle}>
+  //             </Text>
+  //             {/* <Button
+  //               title="Press me to send by Device SMS"
+  //               // onPress={() => Alert.alert('Simple Button pressed')}
+  //               onPress={() => sendSMSViaDevice('Device SMS Test! Hi, This is Andy', TO)}
+  //             /> */}
+  //             {/* <Text style={styles.sectionTitle}>Step One</Text>
+  //             <Text style={styles.sectionDescription}>
+  //               Edit <Text style={styles.highlight}>App.js</Text> to change this
+  //               screen and then come back to see your edits.
+  //             </Text> */}
+  //           </View>
+  //           <View style={styles.sectionContainer}>
+  //             <Text style={styles.sectionTitle}>Add User</Text>
+  //             <Button title='Add' />
+  //           </View>
+  //           <View style={styles.sectionContainer}>
+  //             <Text style={styles.sectionTitle}>Debug</Text>
+  //             <Text style={styles.sectionDescription}>
+  //               <DebugInstructions />
+  //             </Text>
+  //           </View>
+  //           <View style={styles.sectionContainer}>
+  //             <Text style={styles.sectionTitle}>Learn More</Text>
+  //             <Text style={styles.sectionDescription}>
+  //               Read the docs to discover what to do next:
+  //             </Text>
+  //           </View>
+  //           <LearnMoreLinks />
+  //         </View>
+  //       </ScrollView>
+
+  //       <Footer></Footer>
+  //     </SafeAreaView>
+  //   </>
+  // );
 };
 
 const styles = StyleSheet.create({
@@ -191,6 +285,9 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     textAlign: 'right',
   },
+  scene: {
+    flex: 1
+  }
 });
 
 export default App;
