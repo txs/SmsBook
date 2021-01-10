@@ -1,6 +1,6 @@
 # ChatChatSweeTie 竊竊私語 SMSBook
 
-![ChatChatSweeTie 竊竊私語](./img/icons/CCST_logo.png)
+![ChatChatSweeTie 竊竊私語](./img/icons/CCST_logo2.png)
 
 Easy social network like facebook without Internet
 
