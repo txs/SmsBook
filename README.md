@@ -74,13 +74,9 @@ $ yarn android
 
 # Flow
 
-
+[link](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1NlbmRlcl0gLS0-fFNlbmQgR3JvdXAgTWVzc2FnZSBieSBTTVN8IEIoUGhvbmUgYXMgU01TIFNlcnZlcilcbiAgICBCIC0tPiBLe0RvZXMgaXQgaGF2ZSBJbnRlcm5ldD99XG4gICAgSyAtLT58WWVzISBTZW5kIGJ5IEludGVybmV0fCBDKFR3aWxpbzpJbnRlcm5ldCBTTVMgc2VydmljZSB0byByZWR1Y2UgY29zdClcbiAgICBDIC0tPnxTZW5kIGJ5IEludGVybmV0fCBHW0xhcHRvcF1cbiAgICBDIC0tPnxTZW5kIGJ5IEludGVybmV0fCBIW2lQaG9uZSB3aXRoIEludGVybmV0XVxuICAgIEMgLS0-fFNlbmQgYnkgSW50ZXJuZXR8IElbQW5kcm9pZCB3aXRoIEludGVybmV0XVxuICAgIEMgLS0-fFNlbmQgYnkgSW50ZXJuZXR8IExbQVBJc11cbiAgICBLIC0tPnxObyEgU2VuZCBieSBTTVN8IEVbaVBob25lXVxuICAgIEsgLS0-fE5vISBTZW5kIGJ5IFNNU3wgRltBbmRyb2lkXVxuICAgIEsgLS0-fE5vISBTZW5kIGJ5IFNNU3wgSltUcmFkaXRpb25hbCBQaG9uZV0iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)
 <table>
 <!-- <Flowchart> -->
-<tr><td colspan=2 align="center">
-    <b>Flow</b></br>
-    [<a href="http://mermaid-js.github.io/mermaid/#/flowchart">docs</a> - <a href="https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW0hhcmRdIC0tPnxUZXh0fCBCKFJvdW5kKVxuICAgIEIgLS0-IEN7RGVjaXNpb259XG4gICAgQyAtLT58T25lfCBEW1Jlc3VsdCAxXVxuICAgIEMgLS0-fFR3b3wgRVtSZXN1bHQgMl0iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ">live editor</a>]
-</td></tr>
 <tr>
     <pre>
 graph TD
@@ -96,6 +92,30 @@ graph TD
     K -->|No! Send by SMS| J[Traditional Phone]
     </pre>
     <img src="https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1NlbmRlcl0gLS0-fFNlbmQgR3JvdXAgTWVzc2FnZSBieSBTTVN8IEIoUGhvbmUgYXMgU01TIFNlcnZlcilcbiAgICBCIC0tPiBLe0RvZXMgaXQgaGF2ZSBJbnRlcm5ldD99XG4gICAgSyAtLT58WWVzISBTZW5kIGJ5IEludGVybmV0fCBDKFR3aWxpbzpJbnRlcm5ldCBTTVMgc2VydmljZSB0byByZWR1Y2UgY29zdClcbiAgICBDIC0tPnxTZW5kIGJ5IEludGVybmV0fCBHW0xhcHRvcF1cbiAgICBDIC0tPnxTZW5kIGJ5IEludGVybmV0fCBIW2lQaG9uZSB3aXRoIEludGVybmV0XVxuICAgIEMgLS0-fFNlbmQgYnkgSW50ZXJuZXR8IElbQW5kcm9pZCB3aXRoIEludGVybmV0XVxuICAgIEMgLS0-fFNlbmQgYnkgSW50ZXJuZXR8IExbQVBJc11cbiAgICBLIC0tPnxObyEgU2VuZCBieSBTTVN8IEVbaVBob25lXVxuICAgIEsgLS0-fE5vISBTZW5kIGJ5IFNNU3wgRltBbmRyb2lkXVxuICAgIEsgLS0-fE5vISBTZW5kIGJ5IFNNU3wgSltUcmFkaXRpb25hbCBQaG9uZV0iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ" />
+</tr>
+<!-- </Flowchart> -->
+</table>
+
+# IOT Flow
+
+[link](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW01hY2hpbmUgMV0geC0teCB8NTMyIFNlbmQgYnkgd2lyZSBvciBibHVldG9vdGggb3IgbmV0d29yayBvciBpMmN8IEIoUGhvbmUgd2l0aCBTTVMgYWJpbGl0eSlcbiAgICBYW01hY2hpbmUgMl0geC0teCB8MzIgU2VuZCBieSB3aXJlIG9yIGJsdWV0b290aCBvciBuZXR3b3JrIG9yIGkyY3wgQlxuICAgIFlbTWFjaGluZSAzXSAgeC0teCB8MzAgU2VuZCBieSB3aXJlIG9yIGJsdWV0b290aCBvciBuZXR3b3JrIG9yIGkyY3wgQlxuICAgIFpbTWFjaGluZSA0XSB4LS14IHwwIFNlbmQgYnkgd2lyZSBvciBibHVldG9vdGggb3IgbmV0d29yayBvciBpMmN8IEJcbiAgICBBQVtNYWNoaW5lIDVdIHgtLXggfDIwIFNlbmQgYnkgd2lyZSBvciBibHVldG9vdGggb3IgbmV0d29yayBvciBpMmN8IEJcbiAgICBCIG8tLW8gfFNNU3wgSyhQaG9uZSB3aXRoIEludGVybmV0KVxuICAgIEsgLS0-fEludGVybmV0fCBFWyhEYXRhYmFzZSldXG4gICAgSyAtLT58SW50ZXJuZXQgQVBJc3wgRigoQ2xvdWQgRnVuY3Rpb25zKSlcbiAgICBLIC0tPnxDTVMgQVBJc3wgSnt7RGFzaGJhb3JkfX0iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)
+
+<table>
+<!-- <Flowchart> -->
+<tr>
+    <pre>
+graph TD
+    A[Machine 1] x--x |532 Send by wire or bluetooth or network or i2c| B(Phone with SMS ability)
+    X[Machine 2] x--x |32 Send by wire or bluetooth or network or i2c| B
+    Y[Machine 3]  x--x |30 Send by wire or bluetooth or network or i2c| B
+    Z[Machine 4] x--x |0 Send by wire or bluetooth or network or i2c| B
+    AA[Machine 5] x--x |20 Send by wire or bluetooth or network or i2c| B
+    B o--o |SMS| K(Phone with Internet)
+    K -->|Internet| E[(Database)]
+    K -->|Internet APIs| F((Cloud Functions))
+    K -->|CMS APIs| J{{Dashbaord}}
+    </pre>
+    <img src="https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW01hY2hpbmUgMV0geC0teCB8NTMyIFNlbmQgYnkgd2lyZSBvciBibHVldG9vdGggb3IgbmV0d29yayBvciBpMmN8IEIoUGhvbmUgd2l0aCBTTVMgYWJpbGl0eSlcbiAgICBYW01hY2hpbmUgMl0geC0teCB8MzIgU2VuZCBieSB3aXJlIG9yIGJsdWV0b290aCBvciBuZXR3b3JrIG9yIGkyY3wgQlxuICAgIFlbTWFjaGluZSAzXSAgeC0teCB8MzAgU2VuZCBieSB3aXJlIG9yIGJsdWV0b290aCBvciBuZXR3b3JrIG9yIGkyY3wgQlxuICAgIFpbTWFjaGluZSA0XSB4LS14IHwwIFNlbmQgYnkgd2lyZSBvciBibHVldG9vdGggb3IgbmV0d29yayBvciBpMmN8IEJcbiAgICBBQVtNYWNoaW5lIDVdIHgtLXggfDIwIFNlbmQgYnkgd2lyZSBvciBibHVldG9vdGggb3IgbmV0d29yayBvciBpMmN8IEJcbiAgICBCIG8tLW8gfFNNU3wgSyhQaG9uZSB3aXRoIEludGVybmV0KVxuICAgIEsgLS0-fEludGVybmV0fCBFWyhEYXRhYmFzZSldXG4gICAgSyAtLT58SW50ZXJuZXQgQVBJc3wgRigoQ2xvdWQgRnVuY3Rpb25zKSlcbiAgICBLIC0tPnxDTVMgQVBJc3wgSnt7RGFzaGJhb3JkfX0iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ" />
 </tr>
 <!-- </Flowchart> -->
 </table>
