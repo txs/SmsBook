@@ -1,24 +1,27 @@
+import { Right } from 'native-base';
 import React from 'react'
 import {
     FlatList,
     View,
     Text,
-    StyleSheet
+    StyleSheet,
 } from 'react-native'
+import UserDelete from './UserDelete';
 
 
 
-const UserList = ({ data }) => {
+const UserList = ({ data, userDeleteAction }) => {
     const Item = ({ id, name, phone }) => (
         <View style={styles.item}>
             <Text style={styles.title}>id: {id}</Text>
             <Text style={styles.title}>name: {name}</Text>
             <Text style={styles.title}>phone: {phone}</Text>
+            <UserDelete id={id} userDeleteAction={userDeleteAction}></UserDelete>
         </View>
     );
 
     const renderItem = ({ item }) => {
-        console.log(item);
+        // console.log(item);
         return (
             <Item
                 id={item.id}

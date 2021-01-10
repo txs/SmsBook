@@ -12,7 +12,7 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import com.facebook.react.shell.MainReactPackage;
-import com.react.SmsPackage;
+import com.rnfs.RNFSPackage;
 import java.util.List;
 import java.util.Arrays;
 

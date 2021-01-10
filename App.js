@@ -42,6 +42,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import ChatPage from './components/ChatPage'
 import UserPage from './components/UserPage'
 import ServerPage from './components/ServerPage'
+import SmsFetch from './components/SmsFetch'
 
 
 
@@ -71,6 +72,7 @@ const App: () => React$Node = () => {
   DeviceEventEmitter.addListener('sms_onDelivery', (msg) => {
     console.log(msg);
   });
+
   // var filter = {
   //   box: 'inbox', // 'inbox' (default), 'sent', 'draft', 'outbox', 'failed', 'queued', and '' for all
 

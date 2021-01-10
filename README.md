@@ -1,8 +1,44 @@
-# SMSBook
+# ChatChatSweeTie 竊竊私語 SMSBook
+
+![ChatChatSweeTie 竊竊私語](./img/icons/CCST_logo.png)
 
 Easy social network like facebook without Internet
 
+Furtur more, we hope to include gun.js for offline first, non-centralize, circuit switch network!
+
+We use 'ch@' as a short term for 'chat' as a keyword to compress messages in SMS
+
 Only tested on Android with Samsung S7 edge Android 8.0
+
+# Culture
+
+A Sweetie Doll with Two knife comments out "Chat" or "Cut" as a symbol for free speech!
+
+"ChatChatSweeTie" can be shorten to be "CCST"
+
+## What does CCST stands for?
+
+CCST -> Co Cellular Service Transfer
+
+CCST -> Cross Central SMS Transport
+
+CCST -> Collaborative Circuit Switch Transmittion
+
+## Why "Chat" and why "Cut"?
+
+"竊竊私語" in Chinese means "cryto cryto private language" which sounds like "ChatChatSweeTie"
+
+For pronuciation,
+
+"竊" sounds like "Chat" also know as "切" known as "Cut"
+
+## Why Channel 77?
+
+"竊竊" can be know for "切切" which is 7 knife and 7 knife, so in this project we name it channel 77 "ch77"
+
+## Why magic number 7741?
+
+"竊竊私語" in chinese sounds like 7741
 
 # Setup
 
@@ -81,5 +117,12 @@ The "List of devices attached" should have "device" in the list
 - [x] Send SMS @Done by @txs 2021-01-09 19:14:08
 - [x] Twilio SMS Send @Done by @txs 2021-01-09 23:01:23
 - [ ] Read incoming message by clock
-- [ ] Unix time to readable time
+- [ ] Unix time to readable time -> Use Moment
 - [x] Able to send test message for id, phone number server and message @Done by @txs 2021-01-10 16:19:05
+- [x] UserList by Json @Done by @txs 2021-01-10 16:58:37
+- [x] userPage Done
+- [x] Server Done
+- [x] IOT multi machine DEMO Vid Done
+- [x] Self Forward to Self DEMO Vid Done
+- [ ] Chat UI
+- [ ] Group Demo
