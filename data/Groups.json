@@ -1,0 +1,18 @@
+{
+    "pcs": {
+        "users": [
+            "txt",
+            "txh"
+        ]
+    },
+    "android": {
+        "users": [
+            "txt"
+        ]
+    },
+    "ios": {
+        "users": [
+            "txh"
+        ]
+    }
+}

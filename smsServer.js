@@ -5,6 +5,7 @@ import SmsFetch from './components/SmsFetch'
 import SmsAndroid from 'react-native-get-sms-android';
 import sendSMSViaTwilio from './sendSMSViaTwilio'
 import Users from './data/Users.json'
+import Groups from './data/Groups.json'
 
 const getSMS = () => {
     return new Promise((resolve, reject) => {
@@ -110,7 +111,41 @@ const ScanSMS = ({ isResend }) => {
                 isChange = true
                 item.state = 'new'
                 messages.push(item)
-                // sendSMSViaTwilio('ch@' + item.touserid + ':' + item.messages, Users[item.touserid].phone)
+                let sendTo = []
+                let userList = []
+                // Push in phone to send sms
+                if ('groupid' in item) {
+                    console.log(Groups[item.groupid]);
+                }
+                if ('touserid' in item) {
+                    if (!userList.includes(item.touserid)) {
+                        userList.push(item.touserid)
+                    }
+                }
+                // sendTo.push(Users[item.touserid].phone)
+                console.log(sendTo);
+                // Reserve the codeName from item
+                let codeName = ""
+                let hasGroup = false
+                if ('groupid' in item) {
+                    codeName += "!"
+                    codeName += item.groupid
+                    hasGroup = true
+                }
+                if ('touserid' in item) {
+                    if (!!hasGroup) codeName += '@'
+                    codeName += item.touserid
+                }
+                if ('hashs' in item) {
+                    item.hashs.map(hash => {
+                        codeName += '#'
+                        codeName += hash
+                    })
+                }
+                console.log(codeName);
+                sendTo.map(phone => {
+                    // sendSMSViaTwilio('ch@' + item.touserid + ':' + item.messages, phone)
+                })
             }
         })
         if (isChange) {
@@ -122,7 +157,7 @@ const ScanSMS = ({ isResend }) => {
     }
     const runServer = () => {
         console.log('Go!');
-        console.log(messages);
+        // console.log(messages);
         newSMS()
     }
     useEffect(() => {
@@ -171,8 +206,25 @@ const ScanSMS = ({ isResend }) => {
 
             {
                 messages.map((item, index) => {
+                    let codeName = ""
+                    let hasGroup = false
+                    if ('groupid' in item) {
+                        codeName += "!"
+                        codeName += item.groupid
+                        hasGroup = true
+                    }
+                    if ('touserid' in item) {
+                        if (!!hasGroup) codeName += '@'
+                        codeName += item.touserid
+                    }
+                    if ('hashs' in item) {
+                        item.hashs.map(hash => {
+                            codeName += '#'
+                            codeName += hash
+                        })
+                    }
                     if (item.state != 'resend' && item.state != 'default') {
-                        return <Text key={index}>{item.state} message to {item.touserid} : {item.messages}</Text>
+                        return <Text key={index}>{item.state} message to {codeName} : {item.messages}</Text>
                     }
                 }
 
