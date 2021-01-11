@@ -138,6 +138,8 @@ The "List of devices attached" should have "device" in the list
 
 # Todo
 
+- [x] Server Switch for Device and Twilio @Done by @txs 2021-01-12 01:42:34
+- [x] Auto Detect whether there is Internet @Done by @txs 2021-01-12 01:42:40
 - [x] Read SMS @Done by @txs 2021-01-08 15:14:20
 - [x] Send SMS @Done by @txs 2021-01-09 19:14:08
 - [x] Twilio SMS Send @Done by @txs 2021-01-09 23:01:23
@@ -150,4 +152,5 @@ The "List of devices attached" should have "device" in the list
 - [x] IOT multi machine DEMO Vid Done
 - [x] Self Forward to Self DEMO Vid Done
 - [ ] Chat UI
-- [ ] Group Demo
+- [x] Group Demo @Done with group members 2021-01-11 20:43:07
+- [ ] Run on iPhone

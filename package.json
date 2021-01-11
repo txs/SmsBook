@@ -10,6 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/netinfo": "^5.9.10",
+    "@react-native-picker/picker": "^1.9.10",
     "axios": "^0.21.1",
     "base-64": "^1.0.0",
     "crypto": "^1.0.1",

@@ -54,3 +54,16 @@ if ('hashs' in item) {
 }
 console.log(codeName);
 console.log(codeName == old);
+
+
+
+
+
+//parser test
+let item = { groupid: ['txs', 'txt'] }
+if ('groupid' in item) {
+    console.log(item.groupid)
+}
+if ('touserid' in item) {
+    console.log(item.touserid)
+}

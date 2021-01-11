@@ -50,7 +50,7 @@ const UserPage = () => {
 
             <View style={[styles.scene, {}]} >
                 <Text style={styles.title}>User</Text>
-                <Text>{fs.DocumentDirectoryPath + '../data/Users.json'}</Text>
+                {/* <Text>{fs.DocumentDirectoryPath + '../data/Users.json'}</Text> */}
             </View>
             {/* <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
